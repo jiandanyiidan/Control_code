@@ -1,0 +1,14 @@
+control\matrixfunctions.o: D:/keil5/pack/ARM/CMSIS-DSP/1.15.0/Source/MatrixFunctions/MatrixFunctions.c
+control\matrixfunctions.o: D:/keil5/pack/ARM/CMSIS-DSP/1.15.0/Source/MatrixFunctions/arm_mat_add_f32.c
+control\matrixfunctions.o: D:\keil5\pack\ARM\CMSIS-DSP\1.15.0\Include\dsp/matrix_functions.h
+control\matrixfunctions.o: D:\keil5\pack\ARM\CMSIS-DSP\1.15.0\Include\arm_math_types.h
+control\matrixfunctions.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
+control\matrixfunctions.o: D:\keil5\down\ARM\ARMCC\Bin\..\include\stdint.h
+control\matrixfunctions.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
+control\matrixfunctions.o: D:\keil5\down\ARM\ARMCC\Bin\..\include\string.h
+control\matrixfunctions.o: D:\keil5\down\ARM\ARMCC\Bin\..\include\math.h
+control\matrixfunctions.o: D:\keil5\down\ARM\ARMCC\Bin\..\include\float.h
+control\matrixfunctions.o: D:\keil5\down\ARM\ARMCC\Bin\..\include\limits.h
+control\matrixfunctions.o: D:\keil5\pack\ARM\CMSIS-DSP\1.15.0\Include\arm_math_memory.h
+control\matrixfunctions.o: D:\keil5\pack\ARM\CMSIS-DSP\1.15.0\Include\dsp/none.h
+control\matrixfunctions.o: D:\keil5\pack\ARM\CMSIS-DSP\1.15.0\Include\dsp/utils.h

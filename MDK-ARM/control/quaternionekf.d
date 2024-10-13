@@ -1,0 +1,16 @@
+control\quaternionekf.o: ..\Components\Algorithm\QuaternionEKF.c
+control\quaternionekf.o: ..\Components\Algorithm\QuaternionEKF.h
+control\quaternionekf.o: ../Components/kalman_filter.h
+control\quaternionekf.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h
+control\quaternionekf.o: ../Drivers/CMSIS/Include/core_cm4.h
+control\quaternionekf.o: D:\keil5\down\ARM\ARMCC\Bin\..\include\stdint.h
+control\quaternionekf.o: ../Drivers/CMSIS/Include/cmsis_version.h
+control\quaternionekf.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
+control\quaternionekf.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
+control\quaternionekf.o: ../Drivers/CMSIS/Include/mpu_armv7.h
+control\quaternionekf.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
+control\quaternionekf.o: ../Components/Algorithm/Include/arm_math.h
+control\quaternionekf.o: ../Drivers/CMSIS/Include/core_cm4.h
+control\quaternionekf.o: D:\keil5\down\ARM\ARMCC\Bin\..\include\string.h
+control\quaternionekf.o: D:\keil5\down\ARM\ARMCC\Bin\..\include\math.h
+control\quaternionekf.o: D:\keil5\down\ARM\ARMCC\Bin\..\include\stdlib.h
