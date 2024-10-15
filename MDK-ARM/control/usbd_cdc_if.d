@@ -49,3 +49,6 @@ control\usbd_cdc_if.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.
 control\usbd_cdc_if.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h
 control\usbd_cdc_if.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h
 control\usbd_cdc_if.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h
+control\usbd_cdc_if.o: ../Application/USB_Commucation.h
+control\usbd_cdc_if.o: D:\keil5\down\ARM\ARMCC\Bin\..\include\cstdint
+control\usbd_cdc_if.o: D:\keil5\down\ARM\ARMCC\Bin\..\include\stdbool.h

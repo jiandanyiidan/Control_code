@@ -75,5 +75,7 @@ control\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 control\main.o: ../Components/Algorithm/Include/arm_math.h
 control\main.o: ../Drivers/CMSIS/Include/core_cm4.h
 control\main.o: D:\keil5\down\ARM\ARMCC\Bin\..\include\math.h
+control\main.o: ../Application/xbox_rx_task.h
+control\main.o: D:\keil5\down\ARM\ARMCC\Bin\..\include\stdbool.h
 control\main.o: ../Application/Clamp_task.h
 control\main.o: ../BSP/bsp_servo.h

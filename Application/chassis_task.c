@@ -4,7 +4,7 @@
 #include "cmsis_os.h"
 #include "bsp_can.h"
 #include "Motor_bsp.h"
-
+#include "USB_Commucation.h"
 
 Chassis_t chassis;
 Kinematics_t Kinematics;
@@ -14,11 +14,12 @@ void Gimbal_Task(void  * argument)
 	Motor_Init();
 	while(1)
 	{
-		//Speed_optimize(chassis.x,chassis.y,&chassis.x,&chassis.y);
+		USB_TX();
+		Speed_optimize(chassis.x,chassis.y,&chassis.x,&chassis.y);
 		chassis_speed_control(&chassis);
 		Chassis_PID();
 		platform_trans(&hcan1,chassis.tx_data_text);
-		vTaskDelay(10);
+		vTaskDelay(20);
 	}
 }
 /**

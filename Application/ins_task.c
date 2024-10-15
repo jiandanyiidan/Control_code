@@ -93,6 +93,7 @@ void INS_Task(void)
     {
         // 500hz
         IMU_Temperature_Ctrl();
+		
     }
 
     if ((count % 1000) == 0)

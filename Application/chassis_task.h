@@ -51,6 +51,9 @@ typedef struct
 	Velocities_t actual_velocities; 	//ʵ�����ٶ�
 }Kinematics_t;
 
+
+extern Chassis_t chassis;
+
 static void chassis_speed_control(Chassis_t *chassis);
 static void Speed_optimize(float vx_desired, float vy_desired, float *vx_optimized, float *vy_optimized);
 void Gimbal_Task(void  * argument);

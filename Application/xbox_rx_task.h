@@ -1,7 +1,6 @@
 #ifndef _XBOX_RX_TASK_H
 #define _XBOX_RX_TASK_H
 #include "usart.h"
-
 #include "stdbool.h"
 #include "string.h"
 
@@ -33,5 +32,7 @@ typedef __packed struct
   uint8_t frame;
 }xbox_data_t;
 
-
+void clamp_to_zero(float *value, float threshold);
+extern uint8_t rx_data[60];
+extern xbox_data_t xbox_data;
 #endif

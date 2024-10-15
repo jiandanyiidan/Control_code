@@ -65,3 +65,15 @@ control\chassis_task.o: D:\keil5\down\ARM\ARMCC\Bin\..\include\math.h
 control\chassis_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 control\chassis_task.o: ../BSP/bsp_can.h
 control\chassis_task.o: ../Core/Inc/can.h
+control\chassis_task.o: ..\Application\USB_Commucation.h
+control\chassis_task.o: D:\keil5\down\ARM\ARMCC\Bin\..\include\cstdint
+control\chassis_task.o: ../USB_DEVICE/App/usbd_cdc_if.h
+control\chassis_task.o: ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h
+control\chassis_task.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h
+control\chassis_task.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h
+control\chassis_task.o: ../USB_DEVICE/Target/usbd_conf.h
+control\chassis_task.o: D:\keil5\down\ARM\ARMCC\Bin\..\include\stdio.h
+control\chassis_task.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h
+control\chassis_task.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h
+control\chassis_task.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h
+control\chassis_task.o: D:\keil5\down\ARM\ARMCC\Bin\..\include\stdbool.h

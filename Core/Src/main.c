@@ -34,6 +34,7 @@
 #include "bsp_dwt.h"
 #include "bsp_can.h"
 #include "Motor_bsp.h"
+#include "xbox_rx_task.h"
 #include "Clamp_task.h"
 /* USER CODE END Includes */
 
@@ -101,8 +102,6 @@ int main(void)
   MX_DMA_Init();
   MX_CAN1_Init();
   MX_TIM3_Init();
-  MX_USART2_UART_Init();
-  MX_USART3_UART_Init();
   MX_TIM6_Init();
   MX_I2C3_Init();
   MX_SPI1_Init();
@@ -110,8 +109,8 @@ int main(void)
   MX_TIM4_Init();
   MX_TIM8_Init();
   MX_CAN2_Init();
-  MX_USART6_UART_Init();
   MX_TIM1_Init();
+  MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
   //¶æ»ú³õÊ¼»¯
   HAL_TIM_Base_Start(&htim1);
@@ -119,8 +118,11 @@ int main(void)
   Clamp_Init();
   bsp_can_init();
   DWT_Init(168);
-    while (BMI088_init(&hspi1, 1) != BMI088_NO_ERROR)
-        ;
+  HAL_UART_Receive_IT(&huart1,rx_data,sizeof(rx_data));
+  while (BMI088_init(&hspi1, 1) != BMI088_NO_ERROR)
+  ;
+
+  
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in freertos.c) */
