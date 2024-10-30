@@ -27,8 +27,6 @@ control\motor_bsp.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h
 control\motor_bsp.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h
 control\motor_bsp.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h
 control\motor_bsp.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h
-control\motor_bsp.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h
-control\motor_bsp.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h
 control\motor_bsp.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h
 control\motor_bsp.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
 control\motor_bsp.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h
@@ -63,3 +61,7 @@ control\motor_bsp.o: ../Drivers/CMSIS/Include/core_cm4.h
 control\motor_bsp.o: D:\keil5\down\ARM\ARMCC\Bin\..\include\math.h
 control\motor_bsp.o: ..\BSP\bsp_can.h
 control\motor_bsp.o: ../Core/Inc/can.h
+control\motor_bsp.o: ../Application/chassis_task.h
+control\motor_bsp.o: ../Application/xbox_rx_task.h
+control\motor_bsp.o: ../Core/Inc/usart.h
+control\motor_bsp.o: D:\keil5\down\ARM\ARMCC\Bin\..\include\stdbool.h

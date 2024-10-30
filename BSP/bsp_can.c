@@ -20,16 +20,16 @@ uint8_t bsp_can_init(void)
 	status=HAL_CAN_ConfigFilter(&hcan1,&canFilter);				
 	
 	canFilter.FilterBank=15;    														
-	status=HAL_CAN_ConfigFilter(&hcan2,&canFilter);				
+//	status=HAL_CAN_ConfigFilter(&hcan2,&canFilter);				
 	
 	/*开启CAN通信*/
 	HAL_CAN_Start(&hcan1);				
-	HAL_CAN_Start(&hcan2);
+//	HAL_CAN_Start(&hcan2);
 	
 	
 	/*使能中断*/
 	HAL_CAN_ActivateNotification(&hcan1, CAN_IT_RX_FIFO0_MSG_PENDING);   
-	HAL_CAN_ActivateNotification(&hcan2, CAN_IT_RX_FIFO0_MSG_PENDING);     
+//	HAL_CAN_ActivateNotification(&hcan2, CAN_IT_RX_FIFO0_MSG_PENDING);     
 	return status;
 }
 
@@ -70,8 +70,8 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
 		HAL_CAN_GetRxMessage(&hcan1,CAN_RX_FIFO0,&Rx_data,rxdata);
 		Motor_Rx_data(rxdata,&Rx_data);
 	}
-	else if(hcan->Instance==CAN2)
-	{
-		HAL_CAN_GetRxMessage(&hcan2,CAN_RX_FIFO0,&Rx_data,rxdata);
-	}
+//	else if(hcan->Instance==CAN2)
+//	{
+//		HAL_CAN_GetRxMessage(&hcan2,CAN_RX_FIFO0,&Rx_data,rxdata);
+//	}
 }

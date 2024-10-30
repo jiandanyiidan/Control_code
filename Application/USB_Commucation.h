@@ -51,15 +51,19 @@ typedef struct
 {
 	uint8_t hander;//帧头
 	float yaw_add;//偏航角增加的值
-    float speed;//速度
-    uint8_t state;
+  float speed;//速度
+  uint8_t state;
 	uint16_t crc16;//16位校验位
 }Pack_rx_t;
 #pragma pack()
+
 bool Verify_CRC16_Check_Sum(const uint8_t * pchMessage, uint32_t dwLength);
 void cdc_vcp_data_rx (uint8_t *buf, uint32_t Len);
 void USB_TX(void);
 
+
+
+extern Pack_rx_t pack_rx;
 
 #ifdef __cplusplus
 }

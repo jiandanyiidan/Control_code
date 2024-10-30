@@ -77,8 +77,7 @@ void cdc_vcp_data_rx (uint8_t *buf, uint32_t Len)
             memcpy(&pack_rx,receive_data,Len);
         }
         if(start_receive_flag == 1)
-        {   
-
+        {  
             //改为下位机解算后注释掉
             start_receive_flag=0;
             return;

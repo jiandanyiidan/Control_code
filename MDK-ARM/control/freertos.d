@@ -36,8 +36,6 @@ control\freertos.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h
 control\freertos.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h
 control\freertos.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h
 control\freertos.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h
-control\freertos.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h
-control\freertos.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h
 control\freertos.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h
 control\freertos.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
 control\freertos.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h
@@ -67,6 +65,9 @@ control\freertos.o: ../Components/Controller/controller.h
 control\freertos.o: ../BSP/bsp_dwt.h
 control\freertos.o: ../Components/user_lib.h
 control\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
+control\freertos.o: ../Application/xbox_rx_task.h
+control\freertos.o: ../Core/Inc/usart.h
+control\freertos.o: D:\keil5\down\ARM\ARMCC\Bin\..\include\stdbool.h
 control\freertos.o: ../Application/Clamp_task.h
 control\freertos.o: ../BSP/bsp_servo.h
 control\freertos.o: ../Core/Inc/tim.h

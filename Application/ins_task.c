@@ -2,6 +2,9 @@
 #include "controller.h"
 #include "QuaternionEKF.h"
 #include "bsp_PWM.h"
+#include "FreeRTOS.h"
+#include "task.h"
+#include "cmsis_os.h"
 
 INS_t INS;
 IMU_Param_t IMU_Param;
@@ -56,7 +59,7 @@ void INS_Task(void)
         INS.Gyro[Z] = BMI088.Gyro[Z];
 
         // demo function,用于修正安装误差,可以不管,本demo暂时没用
-//        IMU_Param_Correction(&IMU_Param, INS.Gyro, INS.Accel);
+//      IMU_Param_Correction(&IMU_Param, INS.Gyro, INS.Accel);
 
         // 计算重力加速度矢量和b系的XY两轴的夹角,可用作功能扩展,本demo暂时没用
         INS.atanxz = -atan2f(INS.Accel[X], INS.Accel[Z]) * 180 / PI;
@@ -105,6 +108,19 @@ void INS_Task(void)
     count++;
 }
 
+
+void ins_Task(void  * argument)
+{
+
+  INS_Init();
+
+  while(1)
+  {
+	INS_Task();
+    vTaskDelay(1);
+  }
+
+}
 
 /**
  * @brief          Transform 3dvector from BodyFrame to EarthFrame

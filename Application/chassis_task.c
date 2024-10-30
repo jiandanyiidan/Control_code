@@ -9,8 +9,9 @@
 Chassis_t chassis;
 Kinematics_t Kinematics;
 
-void Gimbal_Task(void  * argument)
+void Chassis_Task(void  * argument)
 {
+	chassis.mode=CHASSIS_MODE_POWERLESS;
 	Motor_Init();
 	while(1)
 	{
@@ -22,6 +23,7 @@ void Gimbal_Task(void  * argument)
 		vTaskDelay(20);
 	}
 }
+
 /**
   * @breif         运动学分解，将底盘中心的速度转换为四个轮子的速度
   * @param[in]     speed_x：x方向速度
@@ -40,30 +42,28 @@ static void chassis_speed_control(Chassis_t *chassis)
 	max=find_max();
 	if(max>MAX_MOTOR_SPEED)
 	{
-		Motor_1.Target.Target_speed=(int)(Motor_1.Target.Target_speed*MAX_MOTOR_SPEED*1.0/max);
-		Motor_2.Target.Target_speed=(int)(Motor_2.Target.Target_speed*MAX_MOTOR_SPEED*1.0/max);
-		Motor_3.Target.Target_speed=(int)(Motor_3.Target.Target_speed*MAX_MOTOR_SPEED*1.0/max);
+		chassis->motor[0].Target.Target_speed=(int)(chassis->motor[0].Target.Target_speed*MAX_MOTOR_SPEED*1.0/max);
+		chassis->motor[1].Target.Target_speed=(int)(chassis->motor[1].Target.Target_speed*MAX_MOTOR_SPEED*1.0/max);
+		chassis->motor[2].Target.Target_speed=(int)(chassis->motor[2].Target.Target_speed*MAX_MOTOR_SPEED*1.0/max);
 	}
 }	
 
 void Chassis_PID()
 {
-	Motor_1.Target.Target_current=PID_Calculate(&Motor_1.param.PID,Motor_1.Actual.Actual_speed,Motor_1.Target.Target_speed);
-	Motor_2.Target.Target_current=PID_Calculate(&Motor_2.param.PID,Motor_2.Actual.Actual_speed,Motor_2.Target.Target_speed);
-	Motor_3.Target.Target_current=PID_Calculate(&Motor_3.param.PID,Motor_3.Actual.Actual_speed,Motor_3.Target.Target_speed);
+	chassis.motor[0].Target.Target_current=PID_Calculate(&chassis.motor[0].param.PID,chassis.motor[0].Actual.Actual_speed,chassis.motor[0].Target.Target_speed);
+	chassis.motor[1].Target.Target_current=PID_Calculate(&chassis.motor[1].param.PID,chassis.motor[1].Actual.Actual_speed,chassis.motor[1].Target.Target_speed);
+	chassis.motor[2].Target.Target_current=PID_Calculate(&chassis.motor[2].param.PID,chassis.motor[2].Actual.Actual_speed,chassis.motor[2].Target.Target_speed);
 	current_task(chassis.tx_data_text);
 }
 
 void current_task(uint8_t data[])
 {
-	data[0]=Motor_1.Target.Target_current>>8;
-	data[1]=Motor_1.Target.Target_current;
-	data[2]=Motor_2.Target.Target_current>>8;
-	data[3]=Motor_2.Target.Target_current;
-	data[4]=Motor_3.Target.Target_current>>8;
-	data[5]=Motor_3.Target.Target_current;
-	data[6]=0;
-	data[7]=0;
+	data[0]=chassis.motor[0].Target.Target_current>>8;
+	data[1]=chassis.motor[0].Target.Target_current;
+	data[2]=chassis.motor[1].Target.Target_current>>8;
+	data[3]=chassis.motor[1].Target.Target_current;
+	data[4]=chassis.motor[2].Target.Target_current>>8;
+	data[5]=chassis.motor[2].Target.Target_current;
 }
 void BaseVel_To_WheelVel(Chassis_t *chassis)
 {
@@ -78,19 +78,19 @@ void BaseVel_To_WheelVel(Chassis_t *chassis)
 	Kinematics.wheel2.target_speed.rpm = Kinematics.wheel2.target_speed.linear_vel * VEL2RPM;
 	Kinematics.wheel3.target_speed.rpm = Kinematics.wheel3.target_speed.linear_vel * VEL2RPM;
 		
-	Motor_1.Target.Target_speed = (int)(Kinematics.wheel1.target_speed.rpm * M2006_REDUCTION_RATIO);
-	Motor_2.Target.Target_speed = (int)(Kinematics.wheel2.target_speed.rpm * M2006_REDUCTION_RATIO);
-	Motor_3.Target.Target_speed = (int)(Kinematics.wheel3.target_speed.rpm * M2006_REDUCTION_RATIO);	
+	chassis->motor[0].Target.Target_speed = (int)(Kinematics.wheel1.target_speed.rpm * M2006_REDUCTION_RATIO);
+	chassis->motor[1].Target.Target_speed = (int)(Kinematics.wheel2.target_speed.rpm * M2006_REDUCTION_RATIO);
+	chassis->motor[2].Target.Target_speed = (int)(Kinematics.wheel3.target_speed.rpm * M2006_REDUCTION_RATIO);	
 }
 int find_max(void)
 {
   int temp=0;
   
-  temp=abs(Motor_1.Target.Target_speed);
-  if(abs(Motor_2.Target.Target_speed)>temp)
-    temp=abs(Motor_2.Target.Target_speed);
-  if(abs(Motor_3.Target.Target_speed)>temp)
-    temp=abs(Motor_3.Target.Target_speed);
+  temp=abs(chassis.motor[0].Target.Target_speed);
+  if(abs(chassis.motor[1].Target.Target_speed)>temp)
+    temp=abs(chassis.motor[1].Target.Target_speed);
+  if(abs(chassis.motor[2].Target.Target_speed)>temp)
+    temp=abs(chassis.motor[2].Target.Target_speed);
   return temp;
 }
 
@@ -165,9 +165,9 @@ void Get_Base_Velocities(void  * argument)
 	while(1)
 	{
 		//根据电机转速测算轮子转速
-		Kinematics.wheel1.actual_speed.rpm =  (float)Motor_1.Actual.Actual_speed / M2006_REDUCTION_RATIO;
-		Kinematics.wheel2.actual_speed.rpm =  -(float)Motor_2.Actual.Actual_speed / M2006_REDUCTION_RATIO;
-		Kinematics.wheel3.actual_speed.rpm =   (float)Motor_3.Actual.Actual_speed / M2006_REDUCTION_RATIO;
+		Kinematics.wheel1.actual_speed.rpm =  (float)chassis.motor[0].Actual.Actual_speed / M2006_REDUCTION_RATIO;
+		Kinematics.wheel2.actual_speed.rpm =  -(float)chassis.motor[1].Actual.Actual_speed / M2006_REDUCTION_RATIO;
+		Kinematics.wheel3.actual_speed.rpm =   (float)chassis.motor[2].Actual.Actual_speed / M2006_REDUCTION_RATIO;
 		//轮子转速转换为轮子线速度
 		Kinematics.wheel1.actual_speed.linear_vel = Kinematics.wheel1.actual_speed.rpm * RPM2VEL;
 		Kinematics.wheel2.actual_speed.linear_vel = Kinematics.wheel2.actual_speed.rpm * RPM2VEL;

@@ -14,6 +14,6 @@ control\supportfunctions.o: D:\keil5\pack\ARM\CMSIS-DSP\1.15.0\Include\dsp/none.
 control\supportfunctions.o: D:\keil5\pack\ARM\CMSIS-DSP\1.15.0\Include\dsp/utils.h
 control\supportfunctions.o: D:/keil5/pack/ARM/CMSIS-DSP/1.15.0/Source/SupportFunctions/arm_bitonic_sort_f32.c
 control\supportfunctions.o: D:\keil5\pack\ARM\CMSIS-DSP\1.15.0\PrivateInclude\arm_sorting.h
-control\supportfunctions.o: ..\Components\Algorithm\Include\arm_math.h
+control\supportfunctions.o: ../Components/Algorithm/Include/arm_math.h
 control\supportfunctions.o: ../Drivers/CMSIS/Include/core_cm4.h
 control\supportfunctions.o: ../Drivers/CMSIS/Include/cmsis_version.h

@@ -27,8 +27,6 @@ control\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h
 control\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h
 control\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h
 control\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h
-control\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h
-control\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h
 control\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h
 control\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
 control\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h
@@ -54,7 +52,6 @@ control\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 control\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 control\main.o: ../Core/Inc/can.h
 control\main.o: ../Core/Inc/dma.h
-control\main.o: ../Core/Inc/i2c.h
 control\main.o: ../Core/Inc/spi.h
 control\main.o: ../Core/Inc/tim.h
 control\main.o: ../Core/Inc/usart.h

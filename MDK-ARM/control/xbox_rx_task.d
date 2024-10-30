@@ -29,8 +29,6 @@ control\xbox_rx_task.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h
 control\xbox_rx_task.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h
 control\xbox_rx_task.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h
 control\xbox_rx_task.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h
-control\xbox_rx_task.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h
-control\xbox_rx_task.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h
 control\xbox_rx_task.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h
 control\xbox_rx_task.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
 control\xbox_rx_task.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h
@@ -68,3 +66,15 @@ control\xbox_rx_task.o: D:\keil5\down\ARM\ARMCC\Bin\..\include\math.h
 control\xbox_rx_task.o: ..\Application\Clamp_task.h
 control\xbox_rx_task.o: ../BSP/bsp_servo.h
 control\xbox_rx_task.o: ../Core/Inc/tim.h
+control\xbox_rx_task.o: ..\Application\USB_Commucation.h
+control\xbox_rx_task.o: D:\keil5\down\ARM\ARMCC\Bin\..\include\cstdint
+control\xbox_rx_task.o: ../USB_DEVICE/App/usbd_cdc_if.h
+control\xbox_rx_task.o: ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h
+control\xbox_rx_task.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h
+control\xbox_rx_task.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h
+control\xbox_rx_task.o: ../USB_DEVICE/Target/usbd_conf.h
+control\xbox_rx_task.o: D:\keil5\down\ARM\ARMCC\Bin\..\include\stdio.h
+control\xbox_rx_task.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h
+control\xbox_rx_task.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h
+control\xbox_rx_task.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h
+control\xbox_rx_task.o: ..\Application\Control_data.h

@@ -6,6 +6,13 @@
 Clamp_Task_t Clamp_Task_1;
 
 static uint8_t  Clamp_angle_task(Clamp_Task_t *clamp);
+/*
+ * @brief  ƹ
+ * @param  None
+ * @retval None
+ * @note   None
+ * @author ־zwx
+*/
 
 void Clamp_task(void  * argument)
 {

@@ -138,7 +138,7 @@
           </Flash1>
           <bUseTDR>1</bUseTDR>
           <Flash2>BIN\UL2V8M.DLL</Flash2>
-          <Flash3></Flash3>
+          <Flash3>"" ()</Flash3>
           <Flash4></Flash4>
           <pFcarmOut></pFcarmOut>
           <pFcarmGrp></pFcarmGrp>
@@ -195,7 +195,7 @@
             <uLtcg>0</uLtcg>
             <nSecure>0</nSecure>
             <RoSelD>3</RoSelD>
-            <RwSelD>4</RwSelD>
+            <RwSelD>3</RwSelD>
             <CodeSel>0</CodeSel>
             <OptFeed>0</OptFeed>
             <NoZi1>0</NoZi1>
@@ -302,12 +302,12 @@
               <OCR_RVCT9>
                 <Type>0</Type>
                 <StartAddress>0x20000000</StartAddress>
-                <Size>0x1c000</Size>
+                <Size>0x21000</Size>
               </OCR_RVCT9>
               <OCR_RVCT10>
                 <Type>0</Type>
-                <StartAddress>0x2001c000</StartAddress>
-                <Size>0x4000</Size>
+                <StartAddress>0x10000000</StartAddress>
+                <Size>0x10000</Size>
               </OCR_RVCT10>
             </OnChipMemories>
             <RvctStartVector></RvctStartVector>
@@ -329,7 +329,7 @@
             <uC99>1</uC99>
             <uGnu>0</uGnu>
             <useXO>0</useXO>
-            <v6Lang>5</v6Lang>
+            <v6Lang>3</v6Lang>
             <v6LangP>3</v6LangP>
             <vShortEn>1</vShortEn>
             <vShortWch>1</vShortWch>
@@ -418,11 +418,6 @@
               <FileName>dma.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Core/Src/dma.c</FilePath>
-            </File>
-            <File>
-              <FileName>i2c.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Core/Src/i2c.c</FilePath>
             </File>
             <File>
               <FileName>spi.c</FileName>
@@ -540,16 +535,6 @@
               <FilePath>../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f4xx_hal_i2c.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_hal_i2c_ex.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.c</FilePath>
-            </File>
-            <File>
               <FileName>stm32f4xx_hal_spi.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c</FilePath>
@@ -663,6 +648,11 @@
               <FileName>Clamp_task.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Application\Clamp_task.c</FilePath>
+            </File>
+            <File>
+              <FileName>Control_data.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Application\Control_data.c</FilePath>
             </File>
           </Files>
         </Group>

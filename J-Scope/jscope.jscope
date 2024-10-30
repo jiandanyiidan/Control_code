@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<JScopeProject>
+    <FileVersion major="1" minor="1" />
+    <Project>
+        <Configuration>
+            <JLink>
+                <Options Connection="1" IsRTTSession="0" IsRTTWithTimeStamp="1" SamplingPeriod="100" SerialNo="0" JTAG_IRPre="-1" JTAG_DRPre="-1" IP="localhost" TargetDevice="stm32f407ig" TargetInterface="SWD" InterfaceSpeed="4000" />
+            </JLink>
+            <ScriptFile Name="unspecified" />
+            <ElfFile Name="E:\Gx_zwx\Control_code\MDK-ARM\control\control.axf" />
+            <DataFile Name="" />
+            <RawFile Name="" />
+            <Scope>
+                <Options TimeResolutionUs="1000000" />
+            </Scope>
+        </Configuration>
+        <Windows>
+            <Graph Show="1" />
+            <Watch Show="1" />
+        </Windows>
+        <SelectedSymbols>
+            <Symbol>
+                <Options Name="Target_speed" Address="0x2000771C" Type="short" TypeID="11" Size="2" GraphColorRed="255" GraphColorGreen="215" GraphColorBlue="0" YMinSampled="-10022" YMaxSampled="10047" YAvgSampled="0" Offset="4" ShowInGraph="1" ACCoupling="0" YOffset="300" IsAutoConfig="0" YResolution="5000" MaxValue="20000" File="..\BSP\Motor_bsp.c" Scope="0" DrawStyle="0" />
+            </Symbol>
+            <Symbol>
+                <Options Name="Actual_speed" Address="0x20007722" Type="short" TypeID="11" Size="2" GraphColorRed="0" GraphColorGreen="255" GraphColorBlue="0" YMinSampled="-10016" YMaxSampled="10118" YAvgSampled="0" Offset="6" ShowInGraph="1" ACCoupling="0" YOffset="300" IsAutoConfig="1" YResolution="5000" MaxValue="15000" File="..\BSP\Motor_bsp.c" Scope="0" DrawStyle="0" />
+            </Symbol>
+        </SelectedSymbols>
+    </Project>
+</JScopeProject>

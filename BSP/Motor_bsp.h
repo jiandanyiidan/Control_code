@@ -4,7 +4,7 @@
 #include <stdint.h>
 #include "controller.h"
 
-typedef  __packed struct
+typedef __packed  struct
 {
     uint32_t Motor_ID;
     uint8_t Motor_temp;
@@ -35,5 +35,5 @@ typedef __packed struct
 void Motor_Init(void);
 
 void Motor_Rx_data(uint8_t data[],CAN_RxHeaderTypeDef *rxFrame);
-extern Motor_t Motor_1, Motor_2,Motor_3;
+//extern Motor_t Motor_1, Motor_2,Motor_3;
 #endif 

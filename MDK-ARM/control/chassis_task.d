@@ -28,8 +28,6 @@ control\chassis_task.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h
 control\chassis_task.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h
 control\chassis_task.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h
 control\chassis_task.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h
-control\chassis_task.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h
-control\chassis_task.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h
 control\chassis_task.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h
 control\chassis_task.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
 control\chassis_task.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h
@@ -62,6 +60,9 @@ control\chassis_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event
 control\chassis_task.o: ../Components/Algorithm/Include/arm_math.h
 control\chassis_task.o: ../Drivers/CMSIS/Include/core_cm4.h
 control\chassis_task.o: D:\keil5\down\ARM\ARMCC\Bin\..\include\math.h
+control\chassis_task.o: ..\Application\xbox_rx_task.h
+control\chassis_task.o: ../Core/Inc/usart.h
+control\chassis_task.o: D:\keil5\down\ARM\ARMCC\Bin\..\include\stdbool.h
 control\chassis_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 control\chassis_task.o: ../BSP/bsp_can.h
 control\chassis_task.o: ../Core/Inc/can.h
@@ -76,4 +77,3 @@ control\chassis_task.o: D:\keil5\down\ARM\ARMCC\Bin\..\include\stdio.h
 control\chassis_task.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h
 control\chassis_task.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h
 control\chassis_task.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h
-control\chassis_task.o: D:\keil5\down\ARM\ARMCC\Bin\..\include\stdbool.h

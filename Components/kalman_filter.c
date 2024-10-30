@@ -290,24 +290,16 @@ void Kalman_Filter_xhatMinusUpdate(KalmanFilter_t *kf)
         }
     }
 }
-float P_matrix_1[36],P_matrix_2[36],P_matrix_3[36],P_matrix_4[36],P_matrix_5[36],P_matrix_6[36],P_matrix_7[36];
 void Kalman_Filter_PminusUpdate(KalmanFilter_t *kf)
 {
     if (!kf->SkipEq2)
     {
         kf->MatStatus = Matrix_Transpose(&kf->F, &kf->FT);
-		memcpy(P_matrix_1,kf->F_data,sizeof(P_matrix_1));
-		memcpy(P_matrix_2,kf->FT_data,sizeof(P_matrix_1));
         kf->MatStatus = Matrix_Multiply(&kf->F, &kf->P, &kf->Pminus);
-		memcpy(P_matrix_3,kf->P_data,sizeof(P_matrix_1));
-		memcpy(P_matrix_4,kf->Pminus_data,sizeof(P_matrix_1));
         kf->temp_matrix.numRows = kf->Pminus.numRows;
         kf->temp_matrix.numCols = kf->FT.numCols;
         kf->MatStatus = Matrix_Multiply(&kf->Pminus, &kf->FT, &kf->temp_matrix); // temp_matrix = F P(k-1) FT
-		memcpy(P_matrix_5,kf->temp_matrix_data,sizeof(P_matrix_1));
         kf->MatStatus = Matrix_Add(&kf->temp_matrix, &kf->Q, &kf->Pminus);
-		memcpy(P_matrix_6,kf->Q_data,sizeof(P_matrix_1));
-		memcpy(P_matrix_7,kf->Pminus_data,sizeof(P_matrix_1));
     }
 }
 void Kalman_Filter_SetK(KalmanFilter_t *kf)
@@ -347,7 +339,7 @@ void Kalman_Filter_xhatUpdate(KalmanFilter_t *kf)
         kf->MatStatus = Matrix_Add(&kf->xhatminus, &kf->temp_vector, &kf->xhat);
     }
 }
-float IMU_Pminus[36],IMU_temp[36],IMU_P[36];
+
 void Kalman_Filter_P_Update(KalmanFilter_t *kf)
 {
     if (!kf->SkipEq5)
@@ -359,9 +351,6 @@ void Kalman_Filter_P_Update(KalmanFilter_t *kf)
         kf->MatStatus = Matrix_Multiply(&kf->K, &kf->H, &kf->temp_matrix);                 // temp_matrix = K(k)·H
         kf->MatStatus = Matrix_Multiply(&kf->temp_matrix, &kf->Pminus, &kf->temp_matrix1); // temp_matrix1 = K(k)·H·P'(k)
         kf->MatStatus = Matrix_Subtract(&kf->Pminus, &kf->temp_matrix1, &kf->P);
-		memcpy(IMU_Pminus,kf->Pminus_data,sizeof(IMU_Pminus));
-		memcpy(IMU_temp,kf->temp_matrix_data1,sizeof(IMU_temp));
-		memcpy(IMU_P,kf->P_data,sizeof(IMU_temp));
     }
 }
 
