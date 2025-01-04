@@ -1,5 +1,7 @@
 #include "USB_Commucation.h"
 #include "Clamp_task.h"
+#include "buzzer.h"
+
 Pack_tx_t pack;
 Pack_rx_t pack_rx;
 
@@ -75,6 +77,13 @@ void cdc_vcp_data_rx (uint8_t *buf, uint32_t Len)
         {
             memcpy(receive_data,buf+j,Len);
             memcpy(&pack_rx,receive_data,Len);
+			HAL_GPIO_WritePin(GPIOH, GPIO_PIN_12|GPIO_PIN_11|GPIO_PIN_10, GPIO_PIN_SET);
+			static uint8_t Rx_flag=0;
+			if(Rx_flag==0)
+			{
+				buzzer_setTask(&buzzer, BUZZER_FORCE_STOP_PRIORITY);
+				Rx_flag++;
+			}
         }
         if(start_receive_flag == 1)
         {  
@@ -88,11 +97,11 @@ void cdc_vcp_data_rx (uint8_t *buf, uint32_t Len)
 void USB_TX(void)
 { 
 	pack.hander       =0x5A;
-
 	//标记一下，后面测通信
 	pack.saved     = Clamp_Task_1.flag_task;
 	pack.crc16     =0xffff;
 	memcpy(Buffer,&pack,sizeof(pack));
 	Append_CRC16_Check_Sum(Buffer,sizeof(pack));
 	CDC_Transmit_FS(Buffer,sizeof(pack));
+	pack.error_judge=0;
 }

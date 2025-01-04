@@ -111,17 +111,23 @@ uint8_t BMI088_init(SPI_HandleTypeDef *bmi088_SPI, uint8_t calibrate)
 
     error |= bmi088_accel_init();
     error |= bmi088_gyro_init();
-    if (calibrate)
-        Calibrate_MPU_Offset(&BMI088);
-    else
-    {
-        BMI088.GyroOffset[0] = GxOFFSET;
-        BMI088.GyroOffset[1] = GyOFFSET;
-        BMI088.GyroOffset[2] = GzOFFSET;
-        BMI088.gNorm = gNORM;
-        BMI088.AccelScale = 9.81f / BMI088.gNorm;
-        BMI088.TempWhenCali = 40;
-    }
+	BMI088.GyroOffset[0] = GxOFFSET;
+    BMI088.GyroOffset[1] = GyOFFSET;
+    BMI088.GyroOffset[2] = GzOFFSET;
+    BMI088.gNorm = gNORM;
+    BMI088.AccelScale = 9.81f / BMI088.gNorm;
+    BMI088.TempWhenCali = 40;
+//    if (calibrate)
+        //Calibrate_MPU_Offset(&BMI088);
+//    else
+//    {
+//        BMI088.GyroOffset[0] = GxOFFSET;
+//        BMI088.GyroOffset[1] = GyOFFSET;
+//        BMI088.GyroOffset[2] = GzOFFSET;
+//        BMI088.gNorm = gNORM;
+//        BMI088.AccelScale = 9.81f / BMI088.gNorm;
+//        BMI088.TempWhenCali = 40;
+//    }
 
     return error;
 }
@@ -130,7 +136,7 @@ uint8_t BMI088_init(SPI_HandleTypeDef *bmi088_SPI, uint8_t calibrate)
 void Calibrate_MPU_Offset(IMU_Data_t *bmi088)
 {
     static float startTime;
-    static uint16_t CaliTimes = 4000; // 需要足够多的数据才能得到有效陀螺仪零偏校准结果
+    static uint16_t CaliTimes = 6000; // 需要足够多的数据才能得到有效陀螺仪零偏校准结果
     uint8_t buf[8] = {0, 0, 0, 0, 0, 0};
     int16_t bmi088_raw_temp;
     float gyroMax[3], gyroMin[3];

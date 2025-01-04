@@ -13,7 +13,7 @@
 #define max_data_xbox 32767.0f
 #define max_x_speed 100.0f
 #define max_y_speed 100.0f
-#define max_z_speed 1.0f
+#define max_z_speed 0.5f
 
 void Rc_task(xbox_data_t *data,Chassis_t *chassis,Pack_rx_t *pack_rx,Clamp_Task_t *Clamp_Task);
 #endif // _CONTROL_DATA_H

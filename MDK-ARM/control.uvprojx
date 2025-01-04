@@ -190,7 +190,7 @@
             <hadIRAM2>1</hadIRAM2>
             <hadIROM2>0</hadIROM2>
             <StupSel>8</StupSel>
-            <useUlib>1</useUlib>
+            <useUlib>0</useUlib>
             <EndSel>0</EndSel>
             <uLtcg>0</uLtcg>
             <nSecure>0</nSecure>
@@ -654,6 +654,16 @@
               <FileType>1</FileType>
               <FilePath>..\Application\Control_data.c</FilePath>
             </File>
+            <File>
+              <FileName>In_na_task.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Application\In_na_task.c</FilePath>
+            </File>
+            <File>
+              <FileName>buzzer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Application\buzzer.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -683,6 +693,11 @@
               <FileName>bsp_servo.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\BSP\bsp_servo.c</FilePath>
+            </File>
+            <File>
+              <FileName>buzzer_bsp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\BSP\buzzer_bsp.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -1511,7 +1526,14 @@
         </targetInfos>
       </component>
     </components>
-    <files/>
+    <files>
+      <file attr="config" category="source" condition="STM32F407xx_ARMCC" name="Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f407xx.s" version="2.6.8">
+        <instance index="0" removed="1">RTE\Device\STM32F407IGHx\startup_stm32f407xx.s</instance>
+        <component Cclass="Device" Cgroup="Startup" Cvendor="Keil" Cversion="2.6.3" condition="STM32F4 CMSIS"/>
+        <package name="STM32F4xx_DFP" schemaVersion="1.7.2" url="https://www.keil.com/pack/" vendor="Keil" version="2.17.1"/>
+        <targetInfos/>
+      </file>
+    </files>
   </RTE>
 
   <LayerInfo>

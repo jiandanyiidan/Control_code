@@ -21,16 +21,12 @@ void Motor_Init(void)
     chassis.motor[0].param.Motor_ID=0x201;
 	chassis.motor[1].param.Motor_ID=0x202;
 	chassis.motor[2].param.Motor_ID=0x203;
-	PID_Init(&chassis.motor[0].param.PID, 6000.0, 1000.0,0.0, 3.5f,   0.10f,  0.012f, 0.0, 0.0, 0.0, 0.0,0.0,0x00);
+	PID_Init(&chassis.motor[0].param.PID, 6000.0, 1000.0,0.0, 3.7f,   0.10f,  0.012f, 0.0, 0.0, 0.0, 0.0,0.0,0x00);
 	PID_Init(&chassis.motor[1].param.PID, 6000.0, 1000.0,0.0, 3.7f,   0.02f, 0.020f,  0.0, 0.0, 0.0, 0.0,0.0,0x00);
 	PID_Init(&chassis.motor[2].param.PID, 6000.0, 1000.0,0.0, 3.356f, 1.00f,  0.013f, 0.0, 0.0, 0.0, 0.0,0.0,0x00);
-	
-//    Motor_2.param.Motor_ID = 0x202;
-//    PID_Init(&Motor_2.param.PID, 5000.0, 1000.0,0.0, 8.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,0.0,0x00);
-//    Motor_3.param.Motor_ID = 0x203;
-//    PID_Init(&Motor_3.param.PID, 5000.0, 1000.0,0.0, 8.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,0.0,0x00);
-//    Motor_1.param.Motor_ID = 0x201;
-//    PID_Init(&Motor_1.param.PID, 5000.0, 1000.0,0.0, 8.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,0.0,0x00);
+	PID_Init(&chassis.yaw_pid,2.5f,0.0f,0.2f,0.1,0.0f,0.0f,0,0,0,0,0,0);
+	chassis.Target_angle=0;
+	chassis.Actual_angle=0;
 }
 
 /*
@@ -76,4 +72,5 @@ void Motor_Rx_data(uint8_t data[],CAN_RxHeaderTypeDef *rxFrame)
 			break;
 		}
 	}
+	
 }

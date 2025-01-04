@@ -35,6 +35,7 @@
 #include "Motor_bsp.h"
 #include "xbox_rx_task.h"
 #include "Clamp_task.h"
+#include "buzzer.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -108,16 +109,25 @@ int main(void)
   MX_TIM1_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
+  HAL_GPIO_WritePin(GPIOH,GPIO_PIN_10,GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOH,GPIO_PIN_11,GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOH,GPIO_PIN_12,GPIO_PIN_RESET);
   HAL_TIM_Base_Start(&htim1);
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
+  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
   Clamp_Init();
   bsp_can_init();
-  
   DWT_Init(168);
   while (BMI088_init(&hspi1, 1) != BMI088_NO_ERROR)
   ;
   HAL_UART_Receive_IT(&huart1,rx_data,sizeof(rx_data));
+  buzzer_init_example();
+  buzzer_setTask(&buzzer, BUZZER_DJI_STARTUP_PRIORITY);
+  
   /* USER CODE END 2 */
+  /* USER CODE END 2 */
+  /* USER CODE END 2 */
+  
 
   /* Call init function for freertos objects (in freertos.c) */
   MX_FREERTOS_Init();

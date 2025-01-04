@@ -79,3 +79,8 @@ control\control_data.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd
 control\control_data.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h
 control\control_data.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h
 control\control_data.o: D:\keil5\down\ARM\ARMCC\Bin\..\include\stdint.h
+control\control_data.o: ..\Application\In_na_task.h
+control\control_data.o: ..\Application\ins_task.h
+control\control_data.o: ../Components/Devices/BMI088driver.h
+control\control_data.o: ../Components/Algorithm/QuaternionEKF.h
+control\control_data.o: ../Components/kalman_filter.h

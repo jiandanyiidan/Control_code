@@ -5,7 +5,10 @@
 #include "FreeRTOS.h"
 #include "task.h"
 #include "cmsis_os.h"
-
+#include "main.h"
+#include "chassis_task.h"
+#include "buzzer.h"
+extern void MX_USB_DEVICE_Init(void);
 INS_t INS;
 IMU_Param_t IMU_Param;
 PID_t TempCtrl = {0};
@@ -26,6 +29,7 @@ void INS_Init(void)
     IMU_Param.scale[X] = 1;
     IMU_Param.scale[Y] = 1;
     IMU_Param.scale[Z] = 1;
+	
     IMU_Param.Yaw = 0;
     IMU_Param.Pitch = 0;
     IMU_Param.Roll = 0;
@@ -105,18 +109,20 @@ void INS_Task(void)
         // 200hz
     }
 
+	
     count++;
 }
 
-
+ 
 void ins_Task(void  * argument)
 {
 
   INS_Init();
-
+  MX_USB_DEVICE_Init();
   while(1)
   {
 	INS_Task();
+	buzzer_taskScheduler(&buzzer);
     vTaskDelay(1);
   }
 

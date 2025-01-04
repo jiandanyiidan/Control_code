@@ -65,3 +65,11 @@ control\ins_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_gro
 control\ins_task.o: ../BSP/bsp_PWM.h
 control\ins_task.o: ../Core/Inc/tim.h
 control\ins_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
+control\ins_task.o: ..\Application\chassis_task.h
+control\ins_task.o: ../BSP/Motor_bsp.h
+control\ins_task.o: ..\Application\xbox_rx_task.h
+control\ins_task.o: ../Core/Inc/usart.h
+control\ins_task.o: D:\keil5\down\ARM\ARMCC\Bin\..\include\stdbool.h
+control\ins_task.o: ..\Application\buzzer.h
+control\ins_task.o: ../BSP/buzzer_bsp.h
+control\ins_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h

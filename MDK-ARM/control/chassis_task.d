@@ -77,3 +77,8 @@ control\chassis_task.o: D:\keil5\down\ARM\ARMCC\Bin\..\include\stdio.h
 control\chassis_task.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h
 control\chassis_task.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h
 control\chassis_task.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h
+control\chassis_task.o: ..\Application\ins_task.h
+control\chassis_task.o: D:\keil5\down\ARM\ARMCC\Bin\..\include\stdint.h
+control\chassis_task.o: ../Components/Devices/BMI088driver.h
+control\chassis_task.o: ../Components/Algorithm/QuaternionEKF.h
+control\chassis_task.o: ../Components/kalman_filter.h

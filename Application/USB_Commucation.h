@@ -42,6 +42,13 @@ typedef struct
 {
 	uint8_t hander;
     int saved;//是否拿下目标
+	uint8_t tran_flag;//是否上坡
+	float yaw_angle;
+	float x;
+	float y;
+	uint8_t error_judge;
+	uint8_t chassis_status;
+	
 	uint16_t crc16;
 }Pack_tx_t;
 #pragma pack()
@@ -51,8 +58,8 @@ typedef struct
 {
 	uint8_t hander;//帧头
 	float yaw_add;//偏航角增加的值
-  float speed;//速度
-  uint8_t state;
+    float speed;//速度
+    uint8_t state;//0丢失  1检测到   2暂时丢失  3抓取  4送达
 	uint16_t crc16;//16位校验位
 }Pack_rx_t;
 #pragma pack()
@@ -64,6 +71,7 @@ void USB_TX(void);
 
 
 extern Pack_rx_t pack_rx;
+extern Pack_tx_t pack;
 
 #ifdef __cplusplus
 }

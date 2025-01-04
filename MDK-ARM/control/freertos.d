@@ -71,3 +71,15 @@ control\freertos.o: D:\keil5\down\ARM\ARMCC\Bin\..\include\stdbool.h
 control\freertos.o: ../Application/Clamp_task.h
 control\freertos.o: ../BSP/bsp_servo.h
 control\freertos.o: ../Core/Inc/tim.h
+control\freertos.o: ../Application/In_na_task.h
+control\freertos.o: ../Application/USB_Commucation.h
+control\freertos.o: D:\keil5\down\ARM\ARMCC\Bin\..\include\cstdint
+control\freertos.o: ../USB_DEVICE/App/usbd_cdc_if.h
+control\freertos.o: ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h
+control\freertos.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h
+control\freertos.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h
+control\freertos.o: ../USB_DEVICE/Target/usbd_conf.h
+control\freertos.o: D:\keil5\down\ARM\ARMCC\Bin\..\include\stdio.h
+control\freertos.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h
+control\freertos.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h
+control\freertos.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h

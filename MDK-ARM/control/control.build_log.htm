@@ -17,17 +17,40 @@ Library Manager: ArmAr.exe V5.06 update 4 (build 422)
 Hex Converter:   FromElf.exe V5.06 update 4 (build 422)
 CPU DLL:         SARMCM3.DLL V5.39.0.0
 Dialog DLL:      DCM.DLL V1.17.5.0
-Target DLL:      Segger\JL2CM3.dll V2.99.43.0
+Target DLL:      CMSIS_AGDI.dll V1.33.16.0
 Dialog DLL:      TCM.DLL V1.56.4.0
  
 <h2>Project:</h2>
 E:\Gx_zwx\Control_code\MDK-ARM\control.uvprojx
-Project File Date:  10/29/2024
+Project File Date:  12/06/2024
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 4 (build 422)', folder: 'D:\keil5\down\ARM\ARMCC\Bin'
 Build target 'control'
-"control\control.axf" - 0 Error(s), 0 Warning(s).
+compiling In_na_task.c...
+../BSP/bsp_servo.h(10): warning:  #1-D: last line of file ends without a newline
+  #endif /* _BSP_SERVO_H */
+..\Application\Clamp_task.h(32): warning:  #1295-D: Deprecated declaration Clamp_Init - give arg types
+  void Clamp_Init();
+..\Application\Clamp_task.h(33): warning:  #1-D: last line of file ends without a newline
+  #endif /* _CLAMP_TASK_H */
+..\Application\In_na_task.h(104): warning:  #1-D: last line of file ends without a newline
+  #endif /* _IN_NA_TASK_H */
+..\Application\xbox_rx_task.h(88): warning:  #1-D: last line of file ends without a newline
+  //	uint8_t btnDirDown :1;
+..\Application\chassis_task.h(92): warning:  #1295-D: Deprecated declaration Chassis_PID - give arg types
+  void Chassis_PID();
+..\Application\In_na_task.c(312): warning:  #175-D: subscript out of range
+  						posion->Position[3].Output=0;
+..\Application\In_na_task.c(487): warning:  #177-D: variable "time_flag"  was declared but never referenced
+  		static int time_flag=0;
+..\Application\In_na_task.c(642): warning:  #1-D: last line of file ends without a newline
+  }
+..\Application\In_na_task.c: 9 warnings, 0 errors
+linking...
+Program Size: Code=80312 RO-data=2148 RW-data=1600 ZI-data=54824  
+FromELF: creating hex file...
+"control\control.axf" - 0 Error(s), 9 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -51,7 +74,7 @@ Package Vendor: Keil
 
    * Component: ARM::CMSIS:CORE@5.6.0
       Include file:  CMSIS/Core/Include/tz_context.h
-Build Time Elapsed:  00:00:00
+Build Time Elapsed:  00:00:06
 </pre>
 </body>
 </html>

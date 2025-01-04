@@ -28,6 +28,7 @@
 #include "ins_task.h"
 #include "chassis_task.h"
 #include "Clamp_task.h"
+#include "In_na_task.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -46,6 +47,7 @@ osThreadId Chassis_TaskHandle;
 osThreadId Clamp_TaskHandle;
 osThreadId Get_Base_Velocities_TaskHandle;
 osThreadId ins_TaskHandle;
+osThreadId IN_TaskHandle;
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
@@ -119,18 +121,20 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE END RTOS_TIMERS */
 
   /* USER CODE BEGIN RTOS_QUEUES */
-	
-  xTaskCreate(ins_Task,"ins_Task",128,NULL,osPriorityHigh,&ins_TaskHandle);
-  xTaskCreate(Chassis_Task,"GIMBAL_TASK",128,NULL,osPriorityHigh,&Chassis_TaskHandle);
-  xTaskCreate(Clamp_task,"Clamp_task",128,NULL,osPriorityHigh,&Clamp_TaskHandle);
-  xTaskCreate(Get_Base_Velocities,"Get_Base_Velocities",128,NULL,osPriorityHigh,&Get_Base_Velocities_TaskHandle);
- 
+  
+  xTaskCreate(ins_Task,"ins_Task",256,NULL,osPriorityHigh,&ins_TaskHandle);
+  xTaskCreate(Chassis_Task,"Chassis_TASK",128,NULL,osPriorityNormal,&Chassis_TaskHandle);
+  xTaskCreate(Clamp_task,"Clamp_task",128,NULL,osPriorityNormal,&Clamp_TaskHandle);
+  xTaskCreate(Get_Base_Velocities,"Get_Base_Velocities",128,NULL,osPriorityNormal,&Get_Base_Velocities_TaskHandle);
+  xTaskCreate(IN_Task,"IN_Task",128,NULL,osPriorityNormal,&IN_TaskHandle);
+  
   /* add queues, ... */
   /* USER CODE END RTOS_QUEUES */
 
   /* Create the thread(s) */
   /* definition and creation of defaultTask */
-
+  osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 128);
+  defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */

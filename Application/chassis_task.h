@@ -9,8 +9,8 @@
 #define VEL2RPM 2.48033f										//���ٶ�תת��
 #define M2006_REDUCTION_RATIO 36.000000f		//��������ٱ�
 #define RPM2VEL 0.403171f										//ת��ת���ٶ�		vel = rpn*pi*D/60  cm/s
-#define MAX_D_SPEED_X       1.5f    // ��� x �����ٶȱ仯��
-#define MAX_D_SPEED_Y       1.5f    // ��� y �����ٶȱ仯��
+#define MAX_D_SPEED_X       3.0f    // ��� x �����ٶȱ仯��
+#define MAX_D_SPEED_Y       3.0f    // ��� y �����ٶȱ仯��
 #define MAX_D_SPEED_X_STOP  5.0f   // ��� x ����ֹͣ�ٶȱ仯��
 #define MAX_D_SPEED_Y_STOP  5.0f   // ��� y ����ֹͣ�ٶȱ仯��
 
@@ -30,6 +30,24 @@ typedef struct
     float y;
     float z;
 	
+	float x_y[2];
+	float Accl_x_y[2];
+	
+	
+	float Start_yaw;
+	float Yaw_angle;
+	
+	float Start_pitch;
+	float Pitch_angle;
+	
+	float Add_angle;
+	float Target_angle;
+	float Actual_angle;
+	
+	float Roll_start;
+	float Roll_angle;
+	PID_t yaw_pid;
+	
 	Motor_t motor[3];
 	uint8_t tx_data_text[8];
 }Chassis_t;
@@ -46,12 +64,11 @@ typedef __packed struct
 	Speed_t actual_speed;						
 }Wheel_t;
 
-//���̼������ĵ���/���ٶ�
 typedef __packed struct
 {
 	float linear_x;	//m/s
 	float linear_y;
-	float angular_z; //���ٶ�rpm
+	float angular_z; //rpm
 }Velocities_t;
 
 typedef __packed struct
@@ -60,8 +77,8 @@ typedef __packed struct
 	Wheel_t wheel2;
 	Wheel_t wheel3;
 	
-	Velocities_t target_velocities;		//Ŀ�����ٶ�
-	Velocities_t actual_velocities; 	//ʵ�����ٶ�
+	Velocities_t target_velocities;		//
+	Velocities_t actual_velocities; 	//
 }Kinematics_t;
 
 
@@ -75,4 +92,6 @@ void current_task(uint8_t data[]);
 void Chassis_PID();
 void BaseVel_To_WheelVel(Chassis_t *chassis);
 void Get_Base_Velocities(void  * argument);
+float deg2rad(float degrees); 
+
 #endif

@@ -48,11 +48,14 @@
 "control\xbox_rx_task.o"
 "control\clamp_task.o"
 "control\control_data.o"
+"control\in_na_task.o"
+"control\buzzer.o"
 "control\bsp_can.o"
 "control\bsp_dwt.o"
 "control\bsp_pwm.o"
 "control\motor_bsp.o"
 "control\bsp_servo.o"
+"control\buzzer_bsp.o"
 "control\kalman_filter.o"
 "control\user_lib.o"
 "control\quaternionekf.o"
@@ -69,7 +72,7 @@
 "control\usbd_ioreq.o"
 "control\usbd_cdc.o"
 "..\Middlewares\ST\ARM\DSP\Lib\arm_cortexM4l_math.lib"
---library_type=microlib --strict --scatter "control\control.sct"
+--strict --scatter "control\control.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list "control.map" -o control\control.axf
